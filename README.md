@@ -30,7 +30,27 @@ ENVIRONMENT VARIABLES
        worth noting that they may be used/overridden by SCMS sitting above Git
        so take care if using a foreign front-end.
 
-     
+    GIT_INDEX_FILE
+           This environment allows the specification of an alternate index
+           file. If not specified, the default of $GIT_DIR/index is used.
+
+       GIT_INDEX_VERSION
+           This environment variable allows the specification of an index
+           version for new repositories. It won't affect existing index files.
+           By default index file version 2 or 3 is used. See git-update-
+           index(1) for more information.
+
+       GIT_OBJECT_DIRECTORY
+           If the object storage directory is specified via this environment
+           variable then the sha1 directories are created underneath -
+           otherwise the default $GIT_DIR/objects directory is used.
+
+       GIT_ALTERNATE_OBJECT_DIRECTORIES
+           Due to the immutable nature of Git objects, old objects can be
+           archived into shared, read-only directories. This variable
+           specifies a ":" separated (on Windows ";" separated) list of Git
+           object directories which can be used to search for Git objects. New
+           objects will not be written to these directories.   
 
 
    other
